@@ -1,5 +1,4 @@
-const BASE_URL = process.env.BACKEND_BASE_URL
-
+const BASE_URL = "https://studynotionbackend-acgl.onrender.com/api/v1"
 // AUTH ENDPOINTS
 export const endpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
