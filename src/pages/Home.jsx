@@ -186,6 +186,7 @@ function Home() {
           Reviews from other learners
         </h1>
         {/* <ReviewSlider /> */}
+        <ReviewSlider />
       </div>
 
       {/* Footer */}
