@@ -13,18 +13,27 @@ export default function Instructor() {
     const [courses, setCourses] = useState([])
   
     useEffect(() => {
-      ;(async () => {
-        setLoading(true)
-        const instructorApiData = await getInstructorData(token)
-        const result = await fetchInstructorCourses(token)
-        console.log(instructorApiData)
-        if (instructorApiData.length) setInstructorData(instructorApiData)
-        if (result) {
-          setCourses(result)
-        }
-        setLoading(false)
-      })()
-    }, [])
+      (async () => {
+          try {
+              setLoading(true);
+              console.log("instructor dashboard");
+              
+              const instructorApiData = await getInstructorData(token);
+              const result = await fetchInstructorCourses(token);
+              if (instructorApiData.length) {
+                  setInstructorData(instructorApiData);
+              }
+              
+              if (result) {
+                  setCourses(result);
+              }
+          } catch (error) {
+              console.error("Error fetching data:", error);
+          } finally {
+              setLoading(false);
+          }
+      })();
+  }, []); 
   
     const totalAmount = instructorData?.reduce(
       (acc, curr) => acc + curr.totalAmountGenerated,
@@ -109,7 +118,7 @@ export default function Instructor() {
                       </p>
                       <div className="mt-1 flex items-center space-x-2">
                         <p className="text-xs font-medium text-richblack-300">
-                          {course.studentsEnroled.length} students
+                          {course.studentsEnrolled.length} students
                         </p>
                         <p className="text-xs font-medium text-richblack-300">
                           |
