@@ -47,7 +47,7 @@ analyze this point give short description of project
 
 ## Demo
 
-Insert gif or link to demo
+project link
 
 https://study-notion-frontend-ecru.vercel.app/
 ## Installation
