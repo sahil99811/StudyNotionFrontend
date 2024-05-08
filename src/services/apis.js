@@ -1,4 +1,4 @@
-const BASE_URL = "https://studynotionbackend-acgl.onrender.com/api/v1"
+const BASE_URL =`${process.env.REACT_APP_BACKEND_BASE_URL}/api/v1` 
 // AUTH ENDPOINTS
 export const endpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",

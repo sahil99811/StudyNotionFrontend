@@ -1,5 +1,5 @@
 import { toast } from "react-hot-toast"
-
+import Cookies from 'js-cookie';
 import { setLoading, setToken } from "../../slices/authSlice"
 import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
@@ -92,7 +92,8 @@ export function login(email, password, navigate) {
         email,
         password,
       })
-
+      const token = Cookies.get('token');
+      console.log(token);
       console.log("LOGIN API RESPONSE............", response)
 
       if (!response.data.success) {

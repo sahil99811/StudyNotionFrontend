@@ -15,6 +15,7 @@ import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
 import { buyCourse } from "../services/operations/studentFeaturesAPI"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
+import ReviewSlider from "../components/common/ReviewSlider"
 
 function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
